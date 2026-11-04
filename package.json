@@ -1,6 +1,6 @@
 {
   "name": "notion-static-favicon",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Chrome extension that prevents Notion's favicon from changing to match the current page.",
   "repository": "github:platforges/notion-static-favicon",
@@ -20,7 +20,7 @@
     "test:watch": "vitest",
     "check": "npm run typecheck && npm run lint && npm run test && npm run build",
     "zip": "npm run build && node scripts/zip.mjs",
-    "publish:cws": "chrome-webstore-upload --source release/$npm_package_name-$npm_package_version.zip"
+    "publish:cws": "chrome-webstore-upload --source dist/$npm_package_name-$npm_package_version.zip"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

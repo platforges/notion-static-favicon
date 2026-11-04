@@ -1,11 +1,11 @@
-// Builds the extension into dist/: bundles src/content.ts, copies public/,
-// and writes dist/manifest.json with the version taken from package.json.
+// Builds the extension into dist/extension/: bundles src/content.ts, copies public/,
+// and writes dist/extension/manifest.json with the version taken from package.json.
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import * as esbuild from "esbuild";
 
 const watch = process.argv.includes("--watch");
 const root = new URL("../", import.meta.url);
-const dist = new URL("dist/", root);
+const dist = new URL("dist/extension/", root);
 
 const readJson = async (path) =>
   JSON.parse(await readFile(new URL(path, root), "utf8"));

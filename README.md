@@ -15,26 +15,26 @@ To temporarily restore the default behavior, disable the extension and refresh t
 Install it from the Chrome Web Store: _link coming soon_.
 
 Or load it unpacked: run `npm ci && npm run build`, open `chrome://extensions`, enable
-**Developer mode**, click **Load unpacked**, and select the `dist/` folder.
+**Developer mode**, click **Load unpacked**, and select the `dist/extension/` folder.
 
 ## Development
 
 Requires Node 26 (see `.nvmrc`). Every build and test step is an npm script, and CI runs the same
 scripts.
 
-| Command               | What it does                                                              |
-| --------------------- | ------------------------------------------------------------------------- |
-| `npm run build`       | Bundle `src/` with esbuild into `dist/` (version from package.json)       |
-| `npm run watch`       | Rebuild on change                                                         |
-| `npm run typecheck`   | `tsc --noEmit`                                                            |
-| `npm run lint`        | ESLint + Prettier check (`npm run format` to fix)                         |
-| `npm test`            | Vitest unit tests (jsdom)                                                 |
-| `npm run check`       | All of the above; this is what CI runs                                    |
-| `npm run zip`         | Build and pack `release/notion-static-favicon-<version>.zip`              |
-| `npm run publish:cws` | Upload and publish the zip to the Chrome Web Store (needs env vars below) |
+| Command               | What it does                                                                  |
+| --------------------- | ----------------------------------------------------------------------------- |
+| `npm run build`       | Bundle `src/` with esbuild into `dist/extension/` (version from package.json) |
+| `npm run watch`       | Rebuild on change                                                             |
+| `npm run typecheck`   | `tsc --noEmit`                                                                |
+| `npm run lint`        | ESLint + Prettier check (`npm run format` to fix)                             |
+| `npm test`            | Vitest unit tests (jsdom)                                                     |
+| `npm run check`       | All of the above; this is what CI runs                                        |
+| `npm run zip`         | Build and pack `dist/notion-static-favicon-<version>.zip`                     |
+| `npm run publish:cws` | Upload and publish the zip to the Chrome Web Store (needs env vars below)     |
 
 Layout: `src/pin-favicon.ts` holds the logic, `src/content.ts` is the content-script entry,
-`src/manifest.json` is the manifest template, and `public/` has static files copied into `dist/`
+`src/manifest.json` is the manifest template, and `public/` has static files copied into `dist/extension/`
 as-is (the bundled favicon and the extension icons). The 512px icon master is in `assets/`.
 
 ## Releasing
