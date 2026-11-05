@@ -35,6 +35,10 @@ Layout: `src/pin-favicon.ts` holds the logic, `src/content.ts` is the content-sc
 `src/manifest.json` is the manifest template, and `public/` has static files copied into `dist/extension/`
 as-is (the bundled favicon and the extension icons). The 512px icon master is in `assets/`.
 
+## Privacy
+
+The extension collects no data. See [PRIVACY.md](PRIVACY.md).
+
 ## Credits
 
 Forked from [leothorp/notion-favicon-fixer](https://github.com/leothorp/notion-favicon-fixer).
