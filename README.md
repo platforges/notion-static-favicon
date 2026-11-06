@@ -10,7 +10,7 @@ To temporarily restore the default behavior, disable the extension and refresh t
 
 ## Installation
 
-Install it from the Chrome Web Store: coming soon (see [#1][cws-issue]).
+Install it from the [Chrome Web Store](https://chromewebstore.google.com/detail/notion-static-favicon/gjdeflhbbjjkofkhgcohgdhglhgkbmhj).
 
 Or load it unpacked: run `npm ci && npm run build`, open `chrome://extensions`, enable
 **Developer mode**, click **Load unpacked**, and select the `dist/extension/` folder.
@@ -29,7 +29,7 @@ scripts.
 | `npm test`            | Vitest unit tests (jsdom)                                                     |
 | `npm run check`       | All of the above; this is what CI runs                                        |
 | `npm run zip`         | Build and pack `dist/notion-static-favicon-<version>.zip`                     |
-| `npm run publish:cws` | Upload and publish the zip to the Chrome Web Store (see [#1][cws-issue])      |
+| `npm run publish:cws` | Upload and publish the zip to the Chrome Web Store                            |
 
 Layout: `src/pin-favicon.ts` holds the logic, `src/content.ts` is the content-script entry,
 `src/manifest.json` is the manifest template, and `public/` has static files copied into `dist/extension/`
@@ -42,5 +42,3 @@ The extension collects no data. See [PRIVACY.md](PRIVACY.md).
 ## Credits
 
 Forked from [leothorp/notion-favicon-fixer](https://github.com/leothorp/notion-favicon-fixer).
-
-[cws-issue]: https://github.com/platforges/notion-static-favicon/issues/1

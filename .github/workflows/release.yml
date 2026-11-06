@@ -1,20 +1,15 @@
 name: Release
-
 on:
   push:
     tags: ["v*"]
-
 permissions:
   contents: write # create the GitHub Release
-
 concurrency:
   group: release
   cancel-in-progress: false
-
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # Add required reviewers to this environment in repo settings to gate store submissions.
     environment: chrome-web-store
     steps:
       - uses: actions/checkout@v7
@@ -41,8 +36,8 @@ jobs:
       - name: Upload and publish to the Chrome Web Store
         run: npm run publish:cws
         env:
-          EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
-          PUBLISHER_ID: ${{ secrets.PUBLISHER_ID }}
+          EXTENSION_ID: ${{ vars.EXTENSION_ID }}
+          PUBLISHER_ID: ${{ vars.PUBLISHER_ID }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
